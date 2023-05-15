@@ -16,3 +16,17 @@ def getCoordinate(val, data):
         if val in row:
             return i, row.index(val)
     return None, None
+
+def print_solution(current_node, expanded_nodes_count, max_queue_size):
+    print("\nSolution found!")
+    print("Printing All Nodes in the path:")
+    trace = current_node.getAllStateNodes()
+    print("----------------------")
+    if trace:
+        for t in trace:
+            for row in t:
+                print(row)
+
+            print("----------------------")
+    print("Depth is "+str(len(trace)-1))
+    return expanded_nodes_count, max_queue_size
